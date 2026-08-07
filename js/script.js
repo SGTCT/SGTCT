@@ -1,107 +1,97 @@
-(function () {
-  "use strict";
+// ===== Меню (одинаковое на всех страницах) =====
+const NAV_LINKS = [
+  { href: 'index.html',            title: 'Главная' },
+  { href: 'pages/programs.html',   title: 'Программы' },
+  { href: 'pages/admissions.html', title: 'Абитуриентам' },
+  { href: 'pages/about.html',      title: 'О школе' },
+  { href: 'pages/workshops.html',  title: 'Мастерские' },
+  { href: 'pages/employment.html', title: 'Трудоустройство' },
+  { href: 'pages/news.html',       title: 'Новости' },
+  { href: 'pages/contacts.html',   title: 'Контакты' },
+];
 
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+// Определяем, в подпапке pages/ мы или в корне
+const inPages = window.location.pathname.replace(/\\/g, '/').includes('/pages/');
 
-  /* ---------- Mobile nav toggle ---------- */
-  var navToggle = document.getElementById("nav-toggle");
-  var mainNav = document.getElementById("main-nav");
+// Правильный относительный путь с учётом вложенности
+function resolveHref(href){
+  if (href === 'index.html') return inPages ? '../index.html' : 'index.html';
+  const page = href.replace('pages/', '');
+  return inPages ? page : 'pages/' + page;
+}
 
-  if (navToggle && mainNav) {
-    navToggle.addEventListener("click", function () {
-      var isOpen = mainNav.classList.toggle("is-open");
-      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      navToggle.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
-    });
+// Текущая страница (для подсветки активной кнопки)
+const current = window.location.pathname.split('/').pop() || 'index.html';
+const activeKey = inPages ? 'pages/' + current : current;
 
-    mainNav.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        mainNav.classList.remove("is-open");
-        navToggle.setAttribute("aria-expanded", "false");
-        navToggle.setAttribute("aria-label", "Открыть меню");
-      });
-    });
-  }
+const LOGO_SVG = `
+<svg viewBox="0 0 24 24" width="42" height="42" fill="none" aria-hidden="true">
+  <path d="M3 21h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <path d="M5 21V9l7-5 7 5v12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M9 21v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+</svg>`;
 
-  /* ---------- Header shadow on scroll ---------- */
-  var header = document.getElementById("site-header");
-  if (header) {
-    var onScroll = function () {
-      header.classList.toggle("is-scrolled", window.scrollY > 8);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-  }
+function renderHeader(){
+  const slot = document.getElementById('header-placeholder');
+  if (!slot) return;
 
-  /* ---------- Reveal on scroll ---------- */
-  var revealEls = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window && !reduceMotion) {
-    var revealObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    revealEls.forEach(function (el) { revealObserver.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add("is-visible"); });
-  }
+  const links = NAV_LINKS.map(l => {
+    const active = l.href === activeKey ? ' active' : '';
+    return `<a href="${resolveHref(l.href)}" class="nav-link${active}">${l.title}</a>`;
+  }).join('');
 
-  /* ---------- Animated stat counters ---------- */
-  var counters = document.querySelectorAll(".count");
-  function animateCount(el) {
-    var target = parseInt(el.getAttribute("data-count"), 10) || 0;
-    if (reduceMotion) {
-      el.textContent = target;
-      return;
-    }
-    var duration = 1200;
-    var start = null;
-    function step(ts) {
-      if (start === null) start = ts;
-      var progress = Math.min((ts - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(eased * target);
-      if (progress < 1) window.requestAnimationFrame(step);
-    }
-    window.requestAnimationFrame(step);
-  }
+  slot.innerHTML = `
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="${resolveHref('index.html')}" class="logo">
+        ${LOGO_SVG}
+        <span class="logo-text">
+          <strong>Школа строительных профессий</strong>
+          <small>общетехнических и строительных дисциплин</small>
+        </span>
+      </a>
+      <nav class="main-nav" id="main-nav">${links}</nav>
+      <button class="burger" id="burger" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>`;
 
-  if (counters.length) {
-    if ("IntersectionObserver" in window) {
-      var countObserver = new IntersectionObserver(
-        function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              animateCount(entry.target);
-              countObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.6 }
-      );
-      counters.forEach(function (el) { countObserver.observe(el); });
-    } else {
-      counters.forEach(animateCount);
-    }
-  }
+  document.getElementById('burger').addEventListener('click', () => {
+    document.getElementById('main-nav').classList.toggle('open');
+  });
+}
 
-  /* ---------- Contact form (static demo — no backend) ---------- */
-  var form = document.getElementById("contact-form");
-  var formNote = document.getElementById("form-note");
-  if (form && formNote) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      formNote.textContent = "Спасибо! Форма пока не подключена к серверу — добавьте свой обработчик или сервис отправки почты.";
-    });
-  }
+function renderFooter(){
+  const slot = document.getElementById('footer-placeholder');
+  if (!slot) return;
 
-  /* ---------- Footer year ---------- */
-  var yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-})();
+  const navLinks = NAV_LINKS.slice(1).map(l =>
+    `<a href="${resolveHref(l.href)}">${l.title}</a>`).join('');
+
+  slot.innerHTML = `
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="logo-footer">${LOGO_SVG}<span>Школа строительных профессий</span></div>
+        <p>Готовим квалифицированных специалистов для строительной отрасли: от сварщика до мастера отделочных работ.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        ${navLinks}
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <p>г. Ваш город, ул. Строителей, 1</p>
+        <p>+7 (000) 000-00-00</p>
+        <p>info@school.example</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Школа общетехнических и строительных профессий</div>
+  </footer>`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderHeader();
+  renderFooter();
+});
