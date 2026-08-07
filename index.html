@@ -1,491 +1,81 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>School of General Technical and Construction Trades — Строительные навыки для будущего</title>
-<meta name="description" content="Школа технических и строительных специальностей: отделка, фасад, камень, ЖБК, электрика, сантехника. Практическое обучение, современные мастерские, трудоустройство.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Школа общетехнических и строительных профессий</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<a class="skip-link" href="#main">Перейти к содержимому</a>
+  <div id="header-placeholder"></div>
 
-<!-- ============ HEADER ============ -->
-<header class="site-header" id="site-header">
-  <div class="wrap header-inner">
-    <a href="#top" class="logo" aria-label="School of General Technical and Construction Trades — на главную">
-      <span class="logo-mark" aria-hidden="true">
-        <span class="tick"></span><span class="tick"></span><span class="tick"></span>
-      </span>
-      <span class="logo-text">STCT<span class="logo-dot">.</span></span>
-    </a>
-
-    <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
-      <ul>
-        <li><a href="#top">Главная</a></li>
-        <li><a href="#programs">Программы</a></li>
-        <li><a href="#admissions">Поступление</a></li>
-        <li><a href="#about">О школе</a></li>
-        <li><a href="#facilities">Мастерские</a></li>
-        <li><a href="#gallery">Галерея</a></li>
-        <li><a href="#career">Карьера</a></li>
-        <li><a href="#contact">Контакты</a></li>
-      </ul>
-    </nav>
-
-    <div class="header-actions">
-      <a href="#admissions" class="btn btn-amber btn-sm">Подать заявку</a>
-      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Открыть меню">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
-
-<main id="main">
-
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="top">
-    <div class="wrap hero-grid">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Школа технических и строительных специальностей</p>
-        <h1>Строительные навыки, которые&nbsp;строят будущее</h1>
-        <p class="hero-lead">Практическое обучение реальным профессиям стройки: от отделки и фасадных работ до электрики и сантехники. Учимся руками, на настоящем оборудовании, с первого дня.</p>
-        <div class="hero-cta">
-          <a href="#admissions" class="btn btn-amber">Подать заявку</a>
-          <a href="#programs" class="btn btn-outline">Смотреть программы</a>
-        </div>
-
-        <div class="measure-line" aria-hidden="true">
-          <span class="tick-end"></span><span class="dash"></span><span class="tick-end"></span>
-        </div>
-        <dl class="hero-stats">
-          <div class="stat">
-            <dt>Программ обучения</dt>
-            <dd><span class="count" data-count="6">0</span></dd>
-          </div>
-          <div class="stat">
-            <dt>Трудоустройство выпускников</dt>
-            <dd><span class="count" data-count="92">0</span>%</dd>
-          </div>
-          <div class="stat">
-            <dt>Часов практики в среднем</dt>
-            <dd><span class="count" data-count="480">0</span>+</dd>
-          </div>
-        </dl>
-      </div>
-
-      <div class="hero-media reveal" style="--delay:120ms">
-        <div class="img-placeholder tall">
-          <span class="ph-tag">фото</span>
-          Здесь фото: мастерская с действующим оборудованием
-        </div>
-        <div class="img-placeholder small">
-          <span class="ph-tag">фото</span>
-          Здесь фото: студент на практике на объекте
-        </div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <span class="eyebrow">Приём на 2026 год открыт</span>
+      <h1>Освой востребованную строительную профессию</h1>
+      <p>Практическое обучение в современных мастерских: сварка, кладка, электрика,
+         сантехника и отделочные работы. Диплом и помощь с трудоустройством.</p>
+      <div class="hero-actions">
+        <a href="pages/programs.html" class="btn btn-primary">Выбрать программу</a>
+        <a href="pages/admissions.html" class="btn btn-outline">Как поступить</a>
       </div>
     </div>
   </section>
 
-  <!-- ============ ABOUT PREVIEW ============ -->
-  <section class="section" id="about">
-    <div class="wrap about-grid">
-      <div class="reveal">
-        <p class="eyebrow">О школе</p>
-        <h2>Учим тому, что реально нужно на стройке</h2>
-        <p class="lead-text">Наш подход — минимум теории ради теории, максимум практики. Мастерские оборудованы так же, как настоящие объекты, а программы разработаны вместе с партнёрами из строительной отрасли, которые потом же и нанимают выпускников.</p>
-        <a href="#facilities" class="link-arrow">Как устроены наши мастерские →</a>
-      </div>
-
-      <ul class="advantages reveal" style="--delay:120ms">
-        <li>
-          <span class="adv-num">01</span>
-          <div>
-            <h3>Практика с первого дня</h3>
-            <p>Работа с инструментом и материалом начинается в первую неделю обучения, не после семестра теории.</p>
-          </div>
-        </li>
-        <li>
-          <span class="adv-num">02</span>
-          <div>
-            <h3>Международный подход</h3>
-            <p>Программы построены по стандартам, принятым в строительной отрасли за рубежом.</p>
-          </div>
-        </li>
-        <li>
-          <span class="adv-num">03</span>
-          <div>
-            <h3>Партнёры-работодатели</h3>
-            <p>Строительные компании участвуют в разработке программ и берут студентов на стажировки.</p>
-          </div>
-        </li>
-        <li>
-          <span class="adv-num">04</span>
-          <div>
-            <h3>Сертификат по каждой специальности</h3>
-            <p>Каждая программа заканчивается практическим экзаменом и документом о квалификации.</p>
-          </div>
-        </li>
-      </ul>
+  <!-- Цифры -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat"><b>40+</b><span>лет опыта</span></div>
+      <div class="stat"><b>25</b><span>программ обучения</span></div>
+      <div class="stat"><b>95%</b><span>выпускников трудоустроены</span></div>
+      <div class="stat"><b>12 000+</b><span>выпускников</span></div>
     </div>
   </section>
 
-  <!-- ============ PROGRAMS ============ -->
-  <section class="section section-alt" id="programs">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Программы обучения</p>
-        <h2>Шесть направлений, одна цель — выйти готовым специалистом</h2>
-        <p class="lead-text">Каждая программа — это отдельный набор навыков, инструментов и практики. Выбирай направление и смотри подробную структуру курса.</p>
-      </div>
-
-      <div class="program-grid">
-
-        <article class="program-card reveal">
-          <div class="img-placeholder">
-            <span class="ph-tag">фото</span>
-            Здесь фото: специалист по внутренней отделке за работой
-          </div>
-          <div class="program-body">
-            <span class="program-num">01</span>
-            <h3>Отделка</h3>
-            <p>Штукатурные, малярные и напольные работы — полный цикл внутренней отделки помещений.</p>
-            <div class="program-meta">
-              <span>16 недель</span><span>·</span><span>Дневная / вечерняя</span>
-            </div>
-            <a href="#" class="link-arrow">Подробнее о программе →</a>
-          </div>
-        </article>
-
-        <article class="program-card reveal" style="--delay:60ms">
-          <div class="img-placeholder">
-            <span class="ph-tag">фото</span>
-            Здесь фото: монтаж фасадной системы на здании
-          </div>
-          <div class="program-body">
-            <span class="program-num">02</span>
-            <h3>Фасад</h3>
-            <p>Навесные и мокрые фасадные системы, утепление, работа на высоте с соблюдением техники безопасности.</p>
-            <div class="program-meta">
-              <span>18 недель</span><span>·</span><span>Дневная</span>
-            </div>
-            <a href="#" class="link-arrow">Подробнее о программе →</a>
-          </div>
-        </article>
-
-        <article class="program-card reveal" style="--delay:120ms">
-          <div class="img-placeholder">
-            <span class="ph-tag">фото</span>
-            Здесь фото: каменная кладка, крупный план
-          </div>
-          <div class="program-body">
-            <span class="program-num">03</span>
-            <h3>Камень</h3>
-            <p>Кирпичная и блочная кладка, натуральный камень, кладочные растворы и контроль геометрии.</p>
-            <div class="program-meta">
-              <span>20 недель</span><span>·</span><span>Дневная</span>
-            </div>
-            <a href="#" class="link-arrow">Подробнее о программе →</a>
-          </div>
-        </article>
-
-        <article class="program-card reveal" style="--delay:180ms">
-          <div class="img-placeholder">
-            <span class="ph-tag">фото</span>
-            Здесь фото: армирование и заливка железобетонной конструкции
-          </div>
-          <div class="program-body">
-            <span class="program-num">04</span>
-            <h3>ЖБК</h3>
-            <p>Опалубка, армирование, бетонирование — монолитные и сборные железобетонные конструкции.</p>
-            <div class="program-meta">
-              <span>20 недель</span><span>·</span><span>Дневная</span>
-            </div>
-            <a href="#" class="link-arrow">Подробнее о программе →</a>
-          </div>
-        </article>
-
-        <article class="program-card reveal" style="--delay:240ms">
-          <div class="img-placeholder">
-            <span class="ph-tag">фото</span>
-            Здесь фото: студент прокладывает электропроводку в щитке
-          </div>
-          <div class="program-body">
-            <span class="program-num">05</span>
-            <h3>Электрика</h3>
-            <p>Электромонтаж, разводка, щитовое оборудование, диагностика неисправностей и техника безопасности.</p>
-            <div class="program-meta">
-              <span>18 недель</span><span>·</span><span>Дневная / вечерняя</span>
-            </div>
-            <a href="#" class="link-arrow">Подробнее о программе →</a>
-          </div>
-        </article>
-
-        <article class="program-card reveal" style="--delay:300ms">
-          <div class="img-placeholder">
-            <span class="ph-tag">фото</span>
-            Здесь фото: монтаж сантехнических труб и фитингов
-          </div>
-          <div class="program-body">
-            <span class="program-num">06</span>
-            <h3>Сантехника</h3>
-            <p>Водоснабжение, отопление, канализация — монтаж, пайка, испытание систем под давлением.</p>
-            <div class="program-meta">
-              <span>16 недель</span><span>·</span><span>Дневная / вечерняя</span>
-            </div>
-            <a href="#" class="link-arrow">Подробнее о программе →</a>
-          </div>
-        </article>
-
+  <!-- Преимущества -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Почему выбирают нас</h2>
+      <p class="section-sub">Мы сочетаем фундаментальную техническую подготовку и реальные рабочие навыки.</p>
+      <div class="cards">
+        <div class="card"><div class="icon">🛠️</div><h3>Современные мастерские</h3><p>Оборудованные цеха для сварки, кладки, столярного и отделочного дела.</p></div>
+        <div class="card"><div class="icon">👷</div><h3>Преподаватели-практики</h3><p>Мастера производственного обучения с опытом работы на реальных объектах.</p></div>
+        <div class="card"><div class="icon">🤝</div><h3>Партнёры-работодатели</h3><p>Практика и стажировки в ведущих строительных компаниях региона.</p></div>
+        <div class="card"><div class="icon">🎓</div><h3>Диплом и разряд</h3><p>Выпускники получают документ о квалификации и рабочий разряд.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ ADMISSIONS TEASER ============ -->
-  <section class="section" id="admissions">
-    <div class="wrap admissions-grid">
-      <div class="reveal">
-        <p class="eyebrow">Поступление</p>
-        <h2>Подать заявку можно за четыре шага</h2>
-        <ol class="steps-list">
-          <li><span>01</span>Заполни онлайн-форму</li>
-          <li><span>02</span>Загрузи документы</li>
-          <li><span>03</span>Пройди короткое собеседование</li>
-          <li><span>04</span>Получи подтверждение и дату старта</li>
-        </ol>
-        <div class="hero-cta">
-          <a href="#" class="btn btn-amber">Подать заявку сейчас</a>
-          <a href="#" class="btn btn-outline">Требования и стоимость</a>
-        </div>
+  <!-- Программы превью -->
+  <section class="section" style="background:#fff">
+    <div class="container">
+      <h2 class="section-title">Популярные направления</h2>
+      <p class="section-sub">Краткий обзор программ — полный список на странице «Программы».</p>
+      <div class="cards">
+        <div class="card"><div class="icon">⚡</div><h3>Электромонтаж</h3><p>Монтаж и обслуживание электрических сетей и оборудования.</p></div>
+        <div class="card"><div class="icon">🔥</div><h3>Сварочное дело</h3><p>Ручная и полуавтоматическая сварка металлоконструкций.</p></div>
+        <div class="card"><div class="icon">🧱</div><h3>Каменщик</h3><p>Кирпичная и блочная кладка, монолитные работы.</p></div>
+        <div class="card"><div class="icon">🚿</div><h3>Сантехника и HVAC</h3><p>Монтаж систем водоснабжения, отопления и вентиляции.</p></div>
       </div>
-
-      <div class="admissions-card reveal" style="--delay:120ms">
-        <h3>Ближайший набор</h3>
-        <ul class="fact-list">
-          <li><span>Старт занятий</span><strong>1 сентября</strong></li>
-          <li><span>Приём документов до</span><strong>20 августа</strong></li>
-          <li><span>Формат</span><strong>дневной / вечерний</strong></li>
-          <li><span>Стипендии</span><strong>доступны для отличников</strong></li>
-        </ul>
-        <a href="#" class="link-arrow">Все вопросы — в разделе FAQ →</a>
+      <div style="text-align:center;margin-top:2rem">
+        <a href="pages/programs.html" class="btn btn-green-outline">Все программы →</a>
       </div>
     </div>
   </section>
 
-  <!-- ============ FACILITIES ============ -->
-  <section class="section section-dark" id="facilities">
-    <div class="wrap facilities-grid">
-      <div class="reveal">
-        <p class="eyebrow eyebrow-light">Мастерские и оборудование</p>
-        <h2>Учебные площадки, максимально похожие на настоящий объект</h2>
-        <p class="lead-text lead-light">Отдельная мастерская под каждое направление: зона отделки, фасадный полигон, кладочный участок, площадка ЖБК, электрощитовая лаборатория и сантехнический стенд.</p>
-        <div class="measure-line measure-light" aria-hidden="true">
-          <span class="tick-end"></span><span class="dash"></span><span class="tick-end"></span>
-        </div>
-        <a href="#" class="btn btn-outline btn-light">Записаться на экскурсию по кампусу</a>
-      </div>
-
-      <div class="facilities-media reveal" style="--delay:120ms">
-        <div class="img-placeholder">
-          <span class="ph-tag">фото</span>
-          Здесь фото: общий план мастерских
-        </div>
-        <div class="img-placeholder">
-          <span class="ph-tag">фото</span>
-          Здесь фото: зона безопасности и защитное снаряжение
-        </div>
-        <div class="img-placeholder">
-          <span class="ph-tag">фото</span>
-          Здесь фото: электрощитовая лаборатория
-        </div>
-      </div>
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Готовы начать карьеру в строительстве?</h2>
+      <p>Оставьте заявку — приёмная комиссия свяжется с вами и поможет выбрать программу.</p>
+      <a href="pages/admissions.html" class="btn btn-primary">Подать заявку</a>
     </div>
   </section>
 
-  <!-- ============ GALLERY PREVIEW ============ -->
-  <section class="section" id="gallery">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Галерея</p>
-        <h2>Учёба, проекты, мастерские — в фотографиях</h2>
-      </div>
+  <div id="footer-placeholder"></div>
 
-      <div class="gallery-grid">
-        <div class="img-placeholder reveal">Здесь фото: студенты за работой</div>
-        <div class="img-placeholder reveal" style="--delay:60ms">Здесь фото: готовый проект студентов</div>
-        <div class="img-placeholder reveal" style="--delay:120ms">Здесь фото: мастерская крупным планом</div>
-        <div class="img-placeholder reveal" style="--delay:180ms">Здесь видео: занятие по электрике</div>
-        <div class="img-placeholder reveal" style="--delay:240ms">Здесь 360°-тур по кампусу</div>
-        <div class="img-placeholder reveal" style="--delay:300ms">Здесь фото: выпускной день</div>
-      </div>
-      <a href="#" class="link-arrow gallery-link">Открыть полную галерею →</a>
-    </div>
-  </section>
-
-  <!-- ============ CAREER ============ -->
-  <section class="section section-alt" id="career">
-    <div class="wrap career-grid">
-      <div class="reveal">
-        <p class="eyebrow">Карьера</p>
-        <h2>Работодатели знают наших выпускников</h2>
-        <p class="lead-text">Партнёрские строительные компании берут студентов на стажировку ещё до выпуска, а истории наших выпускников — лучшее подтверждение качества программ.</p>
-        <div class="hero-cta">
-          <a href="#" class="btn btn-outline">Стажировки</a>
-          <a href="#" class="btn btn-outline">Истории выпускников</a>
-        </div>
-      </div>
-      <div class="partner-strip reveal" style="--delay:120ms">
-        <div class="img-placeholder small">Здесь логотип партнёра 1</div>
-        <div class="img-placeholder small">Здесь логотип партнёра 2</div>
-        <div class="img-placeholder small">Здесь логотип партнёра 3</div>
-        <div class="img-placeholder small">Здесь логотип партнёра 4</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ NEWS PREVIEW ============ -->
-  <section class="section" id="news">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Новости и события</p>
-        <h2>Что происходит в школе прямо сейчас</h2>
-      </div>
-      <div class="news-grid">
-        <article class="news-card reveal">
-          <span class="news-date">14 июля 2026</span>
-          <h3>Открытый урок по фасадным системам</h3>
-          <p>Показали абитуриентам, как монтируется навесной вентилируемый фасад — от разметки до финальной облицовки.</p>
-        </article>
-        <article class="news-card reveal" style="--delay:60ms">
-          <span class="news-date">2 июля 2026</span>
-          <h3>Новое оборудование в электролаборатории</h3>
-          <p>Обновили стенды для отработки монтажа щитового оборудования и автоматики.</p>
-        </article>
-        <article class="news-card reveal" style="--delay:120ms">
-          <span class="news-date">20 июня 2026</span>
-          <h3>Выпуск группы по направлению «Камень»</h3>
-          <p>21 выпускник получил сертификаты, 18 уже вышли на объекты партнёров.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CTA BANNER ============ -->
-  <section class="cta-banner">
-    <div class="wrap cta-banner-inner reveal">
-      <div class="measure-line measure-light" aria-hidden="true">
-        <span class="tick-end"></span><span class="dash"></span><span class="tick-end"></span>
-      </div>
-      <h2>Присоединяйся к сообществу технических и строительных мастеров</h2>
-      <a href="#admissions" class="btn btn-amber btn-lg">Подать заявку</a>
-    </div>
-  </section>
-
-  <!-- ============ CONTACT ============ -->
-  <section class="section" id="contact">
-    <div class="wrap contact-grid">
-      <div class="reveal">
-        <p class="eyebrow">Контакты</p>
-        <h2>Ответим на любые вопросы о поступлении</h2>
-        <ul class="fact-list">
-          <li><span>Адрес</span><strong>ул. Строителей, 12, Варшава</strong></li>
-          <li><span>Телефон</span><strong>+48 000 000 000</strong></li>
-          <li><span>Email</span><strong>info@school-domain.example</strong></li>
-          <li><span>Часы работы</span><strong>пн–пт, 9:00–18:00</strong></li>
-        </ul>
-        <div class="img-placeholder">
-          <span class="ph-tag">карта</span>
-          Здесь карта с расположением кампуса
-        </div>
-      </div>
-
-      <form class="contact-form reveal" style="--delay:120ms" id="contact-form">
-        <h3>Написать нам</h3>
-        <label>
-          Имя
-          <input type="text" name="name" required>
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" required>
-        </label>
-        <label>
-          Сообщение
-          <textarea name="message" rows="4" required></textarea>
-        </label>
-        <button type="submit" class="btn btn-amber">Отправить сообщение</button>
-        <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
-      </form>
-    </div>
-  </section>
-
-</main>
-
-<!-- ============ FOOTER ============ -->
-<footer class="site-footer">
-  <div class="wrap footer-grid">
-    <div>
-      <a href="#top" class="logo logo-footer">
-        <span class="logo-mark" aria-hidden="true"><span class="tick"></span><span class="tick"></span><span class="tick"></span></span>
-        <span class="logo-text">STCT<span class="logo-dot">.</span></span>
-      </a>
-      <p class="footer-tagline">School of General Technical and Construction Trades — практическое обучение строительным профессиям.</p>
-      <div class="social-row">
-        <a href="#" class="social-ph" aria-label="Мы во ВКонтакте">VK</a>
-        <a href="#" class="social-ph" aria-label="Мы в Telegram">TG</a>
-        <a href="#" class="social-ph" aria-label="Мы на YouTube">YT</a>
-      </div>
-    </div>
-
-    <div>
-      <h4>Разделы</h4>
-      <ul>
-        <li><a href="#programs">Программы</a></li>
-        <li><a href="#admissions">Поступление</a></li>
-        <li><a href="#about">О школе</a></li>
-        <li><a href="#facilities">Мастерские</a></li>
-        <li><a href="#gallery">Галерея</a></li>
-        <li><a href="#career">Карьера</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>Программы</h4>
-      <ul>
-        <li><a href="#programs">Отделка</a></li>
-        <li><a href="#programs">Фасад</a></li>
-        <li><a href="#programs">Камень</a></li>
-        <li><a href="#programs">ЖБК</a></li>
-        <li><a href="#programs">Электрика</a></li>
-        <li><a href="#programs">Сантехника</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4>Контакты</h4>
-      <ul class="footer-contact">
-        <li>ул. Строителей, 12, Варшава</li>
-        <li>+48 000 000 000</li>
-        <li>info@school-domain.example</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="wrap footer-bottom">
-    <p>© <span id="year"></span> School of General Technical and Construction Trades. Все права защищены.</p>
-    <ul class="footer-legal">
-      <li><a href="#">Политика конфиденциальности</a></li>
-      <li><a href="#">Условия обучения</a></li>
-      <li><a href="#">Карта сайта</a></li>
-    </ul>
-  </div>
-</footer>
-
-<script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
