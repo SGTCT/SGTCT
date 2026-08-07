@@ -1,26 +1,22 @@
-// ===== Меню (одинаковое на всех страницах) =====
 const NAV_LINKS = [
-  { href: 'index.html',            title: 'Главная' },
-  { href: 'pages/programs.html',   title: 'Программы' },
+  { href: 'index.html', title: 'Главная' },
+  { href: 'pages/programs.html', title: 'Программы' },
   { href: 'pages/admissions.html', title: 'Абитуриентам' },
-  { href: 'pages/about.html',      title: 'О школе' },
-  { href: 'pages/workshops.html',  title: 'Мастерские' },
+  { href: 'pages/about.html', title: 'О школе' },
+  { href: 'pages/workshops.html', title: 'Мастерские' },
   { href: 'pages/employment.html', title: 'Трудоустройство' },
-  { href: 'pages/news.html',       title: 'Новости' },
-  { href: 'pages/contacts.html',   title: 'Контакты' },
+  { href: 'pages/news.html', title: 'Новости' },
+  { href: 'pages/contacts.html', title: 'Контакты' },
 ];
 
-// Определяем, в подпапке pages/ мы или в корне
 const inPages = window.location.pathname.replace(/\\/g, '/').includes('/pages/');
 
-// Правильный относительный путь с учётом вложенности
 function resolveHref(href){
   if (href === 'index.html') return inPages ? '../index.html' : 'index.html';
   const page = href.replace('pages/', '');
   return inPages ? page : 'pages/' + page;
 }
 
-// Текущая страница (для подсветки активной кнопки)
 const current = window.location.pathname.split('/').pop() || 'index.html';
 const activeKey = inPages ? 'pages/' + current : current;
 
